@@ -1,0 +1,8 @@
+streamlit
+fastapi
+uvicorn
+pandas
+numpy
+matplotlib
+seaborn==0.13.2
+scipy
