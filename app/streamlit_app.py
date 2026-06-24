@@ -85,10 +85,10 @@ zcols = [c + "_z" for c in ["tiktok_minutes_daily", "instagram_minutes_daily", "
 st.dataframe(data[zcols].describe().round(2).T[["mean", "std", "min", "max"]])
 
 st.header("Graphs")
-fig, axes = plt.subplots(2, 2, figsize=(12, 7))
+fig, axes = plt.subplots(2, 2, figsize=(12, 9))
 specs = [("tiktok_minutes_daily", "TikTok minutes per day", pink, "Minutes per day"), ("instagram_minutes_daily", "Instagram minutes per day", mauve, "Minutes per day"), ("addiction_score", "Addiction score", plum, "Score (0 to 100)"), ("sleep_hours", "Sleep hours", taupe, "Hours")]
 for ax, (col, title, color, xlabel) in zip(axes.flat, specs):
-    sns.histplot(data[col], bins=40, kde=True, color=color, ax=ax, edgecolor="white", linewidth=0.4)
+    sns.histplot(data[col], bins=40, kde=True, color=color, ax=ax, edgecolor="white", linewidth=0.8)
     ax.axvline(data[col].mean(), color=ink, ls="--", lw=1.2, label=f"Mean: {data[col].mean():.1f}")
     ax.set_title(title, fontsize=12, fontweight="bold")
     ax.set_xlabel(xlabel, fontsize=10)
