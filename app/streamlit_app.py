@@ -88,7 +88,7 @@ st.header("Graphs")
 fig, axes = plt.subplots(2, 2, figsize=(12, 9))
 specs = [("tiktok_minutes_daily", "TikTok minutes per day", pink, "Minutes per day"), ("instagram_minutes_daily", "Instagram minutes per day", mauve, "Minutes per day"), ("addiction_score", "Addiction score", plum, "Score (0 to 100)"), ("sleep_hours", "Sleep hours", taupe, "Hours")]
 for ax, (col, title, color, xlabel) in zip(axes.flat, specs):
-    sns.histplot(data[col], bins=40, kde=True, color=color, ax=ax, edgecolor="white", linewidth=0.8)
+    sns.histplot(data[col], bins=40, kde=True, color=color, ax=ax, edgecolor="white", linewidth=1.2)
     ax.axvline(data[col].mean(), color=ink, ls="--", lw=1.2, label=f"Mean: {data[col].mean():.1f}")
     ax.set_title(title, fontsize=12, fontweight="bold")
     ax.set_xlabel(xlabel, fontsize=10)
